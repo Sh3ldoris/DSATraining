@@ -26,7 +26,7 @@ public class GoogleInterview {
     // 2nd Solution:
         // - numbers are unsorted
         // - negatives can be present
-    public static final Logger LOGGER = Logger.getLogger(GoogleInterview.class.getSimpleName());
+    static final Logger LOGGER = Logger.getLogger(GoogleInterview.class.getSimpleName());
 
     public static void main(String[] args) {
         // Initialize inputs
@@ -50,7 +50,7 @@ public class GoogleInterview {
             // - if the algorithm throws exception if the numbers are null or empty
     }
 
-    public static void printResult(final boolean result, final int sum) {
+    private static void printResult(final boolean result, final int sum) {
         if (result) {
             LOGGER.log(Level.INFO, "The array HAS the pair matching the sum of {0}", sum);
         } else {
