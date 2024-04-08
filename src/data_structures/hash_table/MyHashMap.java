@@ -1,8 +1,10 @@
 package data_structures.hash_table;
 
 import java.lang.reflect.Array;
+import java.util.Arrays;
 import java.util.Collection;
 import java.util.Collections;
+import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Objects;
@@ -21,10 +23,11 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
 
     public static void main(String[] args) {
         final MyMap<Integer, String> myMap = new MyHashMap<>();
-        myMap.set(10, "Hello World!");
         myMap.set(14, "Hello World!");
+        myMap.set(10, "Hello World!");
 
         final String value = myMap.get(14);
+        LOGGER.log(Level.INFO, Arrays.toString(myMap.keys().toArray()));
         LOGGER.log(Level.INFO, value);
     }
 
@@ -85,6 +88,23 @@ public class MyHashMap<K, V> implements MyMap<K, V> {
         } else {
             throw new NullPointerException("For the given key:" + key + " value is not found");
         }
+    }
+
+    @Override
+    public Set<K> keys() {
+        // This implementation returns keys in unordered order
+        // To have keys or values ordered cache them alongside the data
+        final Set<K> keys = new HashSet<>();
+
+        for (List<MyEntry<K, V>> bucket : data) {
+            if (Objects.isNull(bucket)) continue;
+
+            for (MyEntry<K, V> entry : bucket) {
+                keys.add(entry.key);
+            }
+        }
+
+        return keys;
     }
 
     /**

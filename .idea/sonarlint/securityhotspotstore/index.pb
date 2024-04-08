@@ -18,8 +18,6 @@ V
 &src/coding_problems/ReverseString.java,6/a/6ab735529b2c46aea146dab6d9baa6b45aeabe57
 Z
 *src/coding_problems/MergeSortedArrays.java,7/4/7414563d2b967de24026c81ee2b6e6ad940d40c5
-_
-/src/data_structures/hash_table/MyHashTable.java,c/9/c933c27c2286a6c980b2e23d55716a5c48d6b9f7
 Y
 )src/data_structures/hash_table/MyMap.java,6/e/6ee4f64461a1acb814790fe0acc3e74ffb04a8e7
 ]

@@ -1,5 +1,7 @@
 package data_structures.hash_table;
 
+import java.util.Set;
+
 public interface MyMap<K, V> {
     /**
      * Inset the new key and the associated value
@@ -18,4 +20,9 @@ public interface MyMap<K, V> {
      * @throws NullPointerException if the key is not present
      */
     V get(K key) throws IllegalArgumentException, NullPointerException;
+
+    /**
+     * @return a {@link Set} view of the keys contained in this map
+     */
+    Set<K> keys();
 }
