@@ -12,4 +12,6 @@ public interface MyLinkedList<T> {
     T insert(T value, int index);
 
     void delete(int index);
+
+    void reverse();
 }

@@ -19,7 +19,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         linkedList.append(22);
         linkedList.append(24);
 
-        linkedList.get(5);
+        linkedList.reverse();
 
         System.out.println("Hej");
     }
@@ -108,6 +108,28 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         }
 
         length--;
+    }
+
+    @Override
+    public void reverse() {
+        if (length <= 1) return;
+
+
+        MyEntry<T> oldHead = head;
+        MyEntry<T> current = head;
+        MyEntry<T> next = null;
+        MyEntry<T> previous = null;
+
+        while (current != null) {
+            next = current.next;
+            current.next = previous;
+            current.previous = next;
+            previous = current;
+            current = next;
+        }
+
+        head = previous;
+        tail = oldHead;
     }
 
     private static <T> void checkNotNullInput(T value) throws IllegalArgumentException {
