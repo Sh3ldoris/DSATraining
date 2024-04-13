@@ -14,8 +14,12 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         linkedList.append(12);
         linkedList.append(14);
         linkedList.append(16);
+        linkedList.append(18);
+        linkedList.append(20);
+        linkedList.append(22);
+        linkedList.append(24);
 
-        linkedList.delete(2);
+        linkedList.get(5);
 
         System.out.println("Hej");
     }
@@ -125,15 +129,20 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
 
     private MyEntry<T> getNodeAtIndex(int index) {
         int counter = 0;
-        MyEntry<T> node = head;
 
-        while (counter != index) {
-            if (index < length / 2) {
+        MyEntry<T> node;
+        if (index < length / 2) {
+            node = head;
+            while (counter != index) {
                 node = node.next;
-            } else {
-                node = node.previous;
+                counter++;
             }
-            counter++;
+        } else {
+            node = tail;
+            while (length - 1 - counter != index) {
+                node = node.previous;
+                counter++;
+            }
         }
 
         return node;
