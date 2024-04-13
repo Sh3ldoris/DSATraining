@@ -1,10 +1,13 @@
 package data_structures.linked_list;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class MyLinkedListImpl<T> implements MyLinkedList<T> {
-    private final Logger LOGGER = Logger.getLogger(MyLinkedListImpl.class.getSimpleName());
+    static final Logger LOGGER = Logger.getLogger(MyLinkedListImpl.class.getSimpleName());
     private int length;
     private MyEntry<T> head;
     private MyEntry<T> tail;
@@ -21,7 +24,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
 
         linkedList.reverse();
 
-        System.out.println("Hej");
+        LOGGER.log(Level.INFO, "Values: {0}", linkedList);
     }
 
     public MyLinkedListImpl(T headValue) {
@@ -120,7 +123,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         MyEntry<T> next = null;
         MyEntry<T> previous = null;
 
-        while (current != null) {
+        while (Objects.nonNull(current)) {
             next = current.next;
             current.next = previous;
             current.previous = next;
@@ -130,6 +133,19 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
 
         head = previous;
         tail = oldHead;
+    }
+
+    @Override
+    public String toString() {
+        List<String> values = new ArrayList<>();
+
+        MyEntry<T> node = head;
+        while (Objects.nonNull(node)) {
+            values.add(node.value.toString());
+            node = node.next;
+        }
+
+        return String.join(", ", values);
     }
 
     private static <T> void checkNotNullInput(T value) throws IllegalArgumentException {
