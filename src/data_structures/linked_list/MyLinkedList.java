@@ -11,5 +11,5 @@ public interface MyLinkedList<T> {
 
     T insert(T value, int index);
 
-    T delete(int index);
+    void delete(int index);
 }

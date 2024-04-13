@@ -21,7 +21,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
     }
 
     public MyLinkedListImpl(T headValue) {
-        this.head = new MyEntry<>(headValue, null);
+        this.head = new MyEntry<>(headValue, null, null);
         this.tail = this.head;
         this.length = 1;
     }
@@ -29,6 +29,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
     public MyLinkedListImpl() {
         // Add when first item inserted
         this.head = null;
+        this.tail = null;
         this.length = 0;
     }
 
@@ -75,30 +76,34 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
 
         MyEntry<T> entryToUnlink = getNodeAtIndex(index - 1);
 
-        entryToUnlink.next = new MyEntry<>(value, entryToUnlink.next);
+        entryToUnlink.next = new MyEntry<>(value, entryToUnlink.previous, entryToUnlink.next);
         length++;
         return value;
     }
 
     @Override
-    public T delete(int index) {
+    public void delete(int index) {
         // Time complexity O(n)
         // Check the index
         checkInRangeIndex(index);
 
         if (index == 0) {
             head = head.next;
+            head.previous = null;
         } else if (index == length -1) {
             MyEntry<T> newTail = getNodeAtIndex(index - 1);
             newTail.next = null;
             tail = newTail;
         } else {
             MyEntry<T> nodeBeforeDelete = getNodeAtIndex(index - 1);
-            nodeBeforeDelete.next = nodeBeforeDelete.next.next;
+            MyEntry<T> nodeAfterDelete = nodeBeforeDelete.next.next;
+            nodeBeforeDelete.next = nodeAfterDelete;
+            if (Objects.nonNull(nodeAfterDelete)) {
+                nodeAfterDelete.previous = nodeBeforeDelete;
+            }
         }
 
         length--;
-        return null;
     }
 
     private static <T> void checkNotNullInput(T value) throws IllegalArgumentException {
@@ -123,7 +128,11 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         MyEntry<T> node = head;
 
         while (counter != index) {
-            node = node.next;
+            if (index < length / 2) {
+                node = node.next;
+            } else {
+                node = node.previous;
+            }
             counter++;
         }
 
@@ -139,7 +148,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
         // Check the input
         checkNotNullInput(value);
         // Create a new MyEntry
-        MyEntry<T> newEdgeNode = new MyEntry<>(value, null);
+        MyEntry<T> newEdgeNode = new MyEntry<>(value, null, null);
 
         if (Objects.isNull(tail) || Objects.isNull(head)) {
             // If the tail or head are null (the head or tail are so)
@@ -148,6 +157,7 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
             // Reset the old tail for the new one
             //  1. - Link the current tail to the new one
             //  2. - Set the tail as the new tail
+            newEdgeNode.previous = tail;
             tail.next = newEdgeNode;
             tail = newEdgeNode;
         } else if (EdgeNodeType.HEAD.equals(edgeNodeType)) {
@@ -178,10 +188,12 @@ public class MyLinkedListImpl<T> implements MyLinkedList<T> {
      */
     private static class MyEntry<T> {
         T value;
+        MyEntry<T> previous;
         MyEntry<T> next;
 
-        public MyEntry(T value, MyEntry<T> next) {
+        public MyEntry(T value, MyEntry<T> previous, MyEntry<T> next) {
             this.value = value;
+            this.previous = previous;
             this.next = next;
         }
     }
