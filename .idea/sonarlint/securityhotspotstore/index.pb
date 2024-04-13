@@ -24,3 +24,7 @@ Y
 -src/data_structures/hash_table/MyHashMap.java,5/c/5cf9a51e1ad9e2d3a0525b3fde59628542b96b91
 [
 +src/coding_problems/RecurringCharacter.java,7/5/75cb9fcdf317104f0481e2376b58c8d8616a4863
+a
+1src/data_structures/linked_list/MyLinkedList.java,c/4/c49aed151fdae13c4f85fdfa568a61705fdb67a4
+e
+5src/data_structures/linked_list/MyLinkedListImpl.java,5/6/560a0f98b24854abbbdfb6b295f464a5e38dae04
