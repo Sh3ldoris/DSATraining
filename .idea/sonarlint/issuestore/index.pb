@@ -28,3 +28,9 @@ a
 1src/data_structures/linked_list/MyLinkedList.java,c/4/c49aed151fdae13c4f85fdfa568a61705fdb67a4
 e
 5src/data_structures/linked_list/MyLinkedListImpl.java,5/6/560a0f98b24854abbbdfb6b295f464a5e38dae04
+V
+&src/data_structures/stack/MyStack.java,0/f/0f3fdc0266774b6cb205f94745ddc50dadf45d02
+Z
+*src/data_structures/stack/MyStackImpl.java,8/5/854b9dcdc6c1b9a3811eabeba69e6c30f76f294d
+^
+.src/data_structures/stack/MyStackEasyImpl.java,f/a/fa817ce7ac4f2fa2a1f489927062b73898bce602
