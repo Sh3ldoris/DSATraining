@@ -30,7 +30,9 @@ e
 5src/data_structures/linked_list/MyLinkedListImpl.java,5/6/560a0f98b24854abbbdfb6b295f464a5e38dae04
 V
 &src/data_structures/stack/MyStack.java,0/f/0f3fdc0266774b6cb205f94745ddc50dadf45d02
-Z
-*src/data_structures/stack/MyStackImpl.java,8/5/854b9dcdc6c1b9a3811eabeba69e6c30f76f294d
 ^
 .src/data_structures/stack/MyStackEasyImpl.java,f/a/fa817ce7ac4f2fa2a1f489927062b73898bce602
+V
+&src/data_structures/queue/MyQueue.java,3/c/3cca893efaf27d41315e63fb748136a3f7b6ef56
+Z
+*src/data_structures/queue/MyQueueImpl.java,b/2/b2798e1e528747189a339f810f6d6d483c532776
