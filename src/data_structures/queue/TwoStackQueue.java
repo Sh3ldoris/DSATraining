@@ -8,8 +8,8 @@ import java.util.logging.Logger;
 
 public class TwoStackQueue<T> implements MyQueue<T> {
     static final Logger LOGGER = Logger.getLogger(TwoStackQueue.class.getSimpleName());
-    private Stack<T> input;
-    private Stack<T> output;
+    private final Stack<T> input;
+    private final Stack<T> output;
     private int length;
 
     public TwoStackQueue() {
@@ -41,7 +41,9 @@ public class TwoStackQueue<T> implements MyQueue<T> {
             throw new NoSuchElementException("The queue is empty, cannot peek!");
         }
 
-        return output.empty() ? input.firstElement(): output.peek();
+        pourOver();
+
+        return output.peek();
     }
 
     @Override
@@ -61,12 +63,7 @@ public class TwoStackQueue<T> implements MyQueue<T> {
         if (length == 0) {
             throw new NoSuchElementException("The queue is empty, cannot peek!");
         }
-
-        if (output.empty()) {
-            while (!input.empty()) {
-                output.push(input.pop());
-            }
-        }
+        pourOver();
         length--;
         return output.pop();
     }
@@ -74,5 +71,13 @@ public class TwoStackQueue<T> implements MyQueue<T> {
     @Override
     public boolean empty() {
         return length == 0;
+    }
+
+    private void pourOver() {
+        if (output.empty()) {
+            while (!input.empty()) {
+                output.push(input.pop());
+            }
+        }
     }
 }
