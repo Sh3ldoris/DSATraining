@@ -38,3 +38,7 @@ Z
 *src/data_structures/queue/MyQueueImpl.java,b/2/b2798e1e528747189a339f810f6d6d483c532776
 \
 ,src/data_structures/queue/TwoStackQueue.java,1/a/1a2376875bd54347e850a4850ad4bfb0a8d6c850
+V
+&src/data_structures/tree/MyBSTree.java,4/b/4b5708c20b753c0ba10e3e5fc5268a8b3d8913f7
+Z
+*src/data_structures/tree/MyBSTreeImpl.java,c/5/c514f69b21225b22695b9bb79137c4110fa8e8e2
