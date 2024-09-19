@@ -1,5 +1,6 @@
 package excercise.arrays_hashing;
 
+import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -64,5 +65,14 @@ class Solution {
         }
 
         return true;
+    }
+
+    public boolean isAnagramShort(String s, String t) {
+        char[] sChars = s.toCharArray();
+        char[] tChars = t.toCharArray();
+
+        Arrays.sort(sChars);
+        Arrays.sort(tChars);
+        return (new String(sChars)).equals(new String(tChars));
     }
 }
