@@ -54,3 +54,7 @@ J
 src/sorting/MergeSort.java,1/c/1c33db7bc79440e1bfe3f99e79df1d6c1b57aaab
 c
 3src/excercise/arrays_hashing/001-valid-anagram.java,a/5/a55a02642eecda7cbd3d7bec2479bacd7050678b
+X
+(src/excercise/arrays_hashing/002-two-sum,a/3/a3cd9a007fd3eaa3cb8a043dc95dedb51625211c
+]
+-src/excercise/arrays_hashing/002-two-sum.java,d/c/dc0393a5e7fd4ed37a7068c4272bc65c9b4c7d68
