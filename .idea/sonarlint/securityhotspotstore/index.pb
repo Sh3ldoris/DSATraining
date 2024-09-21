@@ -62,3 +62,5 @@ F
 src/excercise/.gitkeep,6/9/6983a40765f581935ba0ebb620659ea727c18522
 e
 5src/excercise/arrays_hashing/004-k-most-frequent.java,3/f/3f51c0018de88a07cec1ff8c0e948aab5456c197
+c
+3src/excercise/arrays_hashing/005-encode-decode.java,d/b/db9c1fa3041b32f2bc33f2005deda244fdb2ee24
