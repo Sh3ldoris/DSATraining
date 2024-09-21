@@ -64,3 +64,5 @@ e
 5src/excercise/arrays_hashing/004-k-most-frequent.java,3/f/3f51c0018de88a07cec1ff8c0e948aab5456c197
 c
 3src/excercise/arrays_hashing/005-encode-decode.java,d/b/db9c1fa3041b32f2bc33f2005deda244fdb2ee24
+i
+9src/excercise/arrays_hashing/006-product-except-self.java,1/7/17dabcdbfb293be57679bc0d71808f5dccd009e9
