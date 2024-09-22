@@ -66,3 +66,5 @@ c
 3src/excercise/arrays_hashing/005-encode-decode.java,d/b/db9c1fa3041b32f2bc33f2005deda244fdb2ee24
 i
 9src/excercise/arrays_hashing/006-product-except-self.java,1/7/17dabcdbfb293be57679bc0d71808f5dccd009e9
+b
+2src/excercise/arrays_hashing/007-valid-sudoku.java,2/d/2dd0f097c7c604e925135099485c0f35da1901ef
