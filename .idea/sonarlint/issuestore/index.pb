@@ -68,3 +68,5 @@ i
 9src/excercise/arrays_hashing/006-product-except-self.java,1/7/17dabcdbfb293be57679bc0d71808f5dccd009e9
 b
 2src/excercise/arrays_hashing/007-valid-sudoku.java,2/d/2dd0f097c7c604e925135099485c0f35da1901ef
+m
+=src/excercise/arrays_hashing/008-longest-consecutive-seq.java,6/6/6631bdfeaf9cf30bb979acf7f91a2a98431d0d88
