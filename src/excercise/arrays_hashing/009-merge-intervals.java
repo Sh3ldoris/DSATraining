@@ -25,7 +25,7 @@ class SolutionMergeIntervals {
             }
         }
 
-        return result.toArray(new int[result.size()][0]);
+        return result.toArray(new int[result.size()][2]);
     }
 
     public static void main(String[] args) {
