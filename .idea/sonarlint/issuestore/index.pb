@@ -72,3 +72,5 @@ m
 =src/excercise/arrays_hashing/008-longest-consecutive-seq.java,6/6/6631bdfeaf9cf30bb979acf7f91a2a98431d0d88
 e
 5src/excercise/arrays_hashing/009-merge-intervals.java,c/e/ceaad149081df7dafa8ee99acd4c33820d4de920
+d
+4src/excercise/arrays_hashing/010-inser-interval.java,3/1/31ac0aa08fb7abe13243bb83d6a07bdccf651340
