@@ -27,7 +27,7 @@ class SolutionInsertInterval {
 
 
         List<int[]> result = new ArrayList<>();
-        for (int[] arr: intervals) {
+        for (int[] arr : intervals) {
             if (result.isEmpty()) {
                 // New interval is all smaller than current iterated
                 if (newInterval[1] < arr[0]) {
@@ -75,6 +75,45 @@ class SolutionInsertInterval {
         return result.toArray(new int[result.size()][2]);
     }
 
+    public int[][] insertBetter(int[][] intervals, int[] newInterval) {
+        // Case that there is no intervals, just new interval
+        if (intervals.length == 0) {
+            return new int[][]{newInterval};
+        }
+
+        // New intervals is before intervals
+        if (intervals[0][0] > newInterval[1]) {
+            int[][] result = Arrays.copyOf(new int[][]{newInterval}, 1 + intervals.length);
+            System.arraycopy(intervals, 0, result, 1, intervals.length);
+            return result;
+        }
+
+        // New intervals is after all intervals
+        if (intervals[intervals.length - 1][1] < newInterval[0]) {
+            int[][] result = Arrays.copyOf(intervals, 1 + intervals.length);
+            System.arraycopy(new int[][]{newInterval}, 0, result, intervals.length, 1);
+            return result;
+        }
+
+        List<int[]> result = new ArrayList<>();
+        for (int i = 0; i < intervals.length; i++) {
+            if (newInterval[1] < intervals[i][0]) {
+                result.add(newInterval);
+                result.addAll(Arrays.asList(intervals).subList(i, intervals.length));
+                return result.toArray(new int[result.size()][2]);
+            } else if (newInterval[0] > intervals[i][1]) {
+                result.add(intervals[i]);
+            } else {
+                // Merge intervals
+                newInterval = new int[]{Math.min(intervals[i][0], newInterval[0]), Math.max(intervals[i][1], newInterval[1])};
+            }
+        }
+
+        result.add(newInterval);
+
+        return result.toArray(new int[result.size()][2]);
+    }
+
     public static boolean overlaps(int[] interval, int v) {
         return interval[0] <= v && interval[1] >= v;
     }
@@ -83,7 +122,7 @@ class SolutionInsertInterval {
         SolutionInsertInterval solution = new SolutionInsertInterval();
         int[][] intervals = {{1, 3}, {6, 9}};
         int[] newInterval = {2, 5};
-        int[][] result = solution.insert(intervals, newInterval);
+        int[][] result = solution.insertBetter(intervals, newInterval);
         for (int[] interval : result) {
             System.out.println("[" + interval[0] + ", " + interval[1] + "]");
         }
