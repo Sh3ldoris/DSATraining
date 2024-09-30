@@ -76,3 +76,5 @@ d
 4src/excercise/arrays_hashing/010-inser-interval.java,3/1/31ac0aa08fb7abe13243bb83d6a07bdccf651340
 ^
 .src/excercise/two_pointers/001-palindrome.java,8/0/8029485b3e413bce2f026ac9ea6f660263063cde
+[
++src/excercise/two_pointers/002-two-sum.java,0/9/09e82f1f1b6f262e659db734ee147a23affae0a6
